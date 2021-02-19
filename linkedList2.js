@@ -32,7 +32,7 @@ class LinkedList {
             current = this.head // You set the current variable to this.head so you can start in the beginning. 
 
             while(current.next) { // While there is a next property in current, perform the following instructions. 
-                current = current.next; // this will allow us to traverse through the list. 
+                current = current.next; // this will allow us to traverse through the list. This make the next number current until you get to the last node.
             }
 
             current.next = node;  // The node will be passed through the current.next poperty.
@@ -42,6 +42,41 @@ class LinkedList {
     }
 
     // Insert at Index
+    insertAt(data, index) {
+
+        // If the index is less than 0 or greater than the size of the current LinkedList, this method will not execute. 
+        // We will not be able to pull an index off of a list if it's not within the list size.
+        if(index > 0 && index > this.size) {
+            return;
+        }
+
+        // If it is the first index, we need to set it to the head. 
+        if(index === 0) {
+            this.head = new Node(data, this.head); // Create a new node and pass the data and this.head properties.
+            return;
+        }
+
+        // After you verified that the index request is within the scop of the list*******
+
+        // Initialize a new node with the data. 
+        const node = new Node(data);
+        let current, previous; // Initialize the variables current and previous.  We use Let becuase these variables will not be used outside of this method. 
+
+        // Set current to first 
+        current = this.head;
+        let count = 0;
+         
+        while(count < index) {
+            previous = current; // Node before the index
+            count ++;  // Increment the count by one.
+            current = current.next; // Node after the index.
+        } 
+
+        node.next = current; // Set the new value of next for the new node to current.
+        previous.next = node;  // Yout want to set the node as previous.next.  This will place the node where the 
+
+        this.size++; // Increment the size since we are putting in a new node.
+    }
 
     // Get at Index
 
@@ -66,5 +101,6 @@ ll.insertFirst(100); // Insert the number 100 into the LinkedList.
 ll.insertFirst(200); // Insert the number 200 into the LinkedList. 
 ll.insertFirst(300); // Insert the number 300 into the LinkedList. 
 ll.insertLast(400); // Insert the number 400 into the LinkedList. 
+ll.insertAt(500, 2); // Insert the number 500 at the 2 index.
 
 ll.printListData(); // Call the Method to print the data.
