@@ -14,13 +14,32 @@ class LinkedList {
         this.size = 0;
     }
 
-    // Insert first Node.  Create a function that will take in the new node. We are going to pass through data. 
+    // Insert first Node.  Create a function that will take in the new node in the beginning of the list. We are going to pass through data. 
     insertFirst(data) {  
         this.head = new Node(data, this.head) // The new node data will be passed through the head of LinkedList contructor.
+        this.size++; // Increment size by 1.  
     }
 
-    // Insert last node.
-    insertNode() {}
+    // Insert last node.Create a function that will take in a new node at the end of the list. We are going to pass through data. 
+    insertLast(data) {
+        let node = new Node(data) // The new node data will be passed through the head of the linkedList constructor.
+        let current; // Initialize current.
+
+        // If empty, make it the head. 
+        if(!this.head) { // If there is no head or the head is empty, you can use '!this.head' or you can use 'this.head = null'.
+            this.head = node; // Let the node become the head. 
+        } else {  // If there is a head, then perform the following instructions. 
+            current = this.head // You set the current variable to this.head so you can start in the beginning. 
+
+            while(current.next) { // While there is a next property in current, perform the following instructions. 
+                current = current.next; // this will allow us to traverse through the list. 
+            }
+
+            current.next = node;  // The node will be passed through the current.next poperty.
+        }
+
+        this.size++; // Increment size by 1.
+    }
 
     // Insert at Index
 
@@ -44,10 +63,8 @@ class LinkedList {
 const ll = new LinkedList(); // Create a new LinkedList using the template created from above and save the information in a variable called ll. 
 
 ll.insertFirst(100); // Insert the number 100 into the LinkedList. 
-ll.insertFirst(200); // Insert the number 100 into the LinkedList. 
-
-
-
-ll.insertFirst(300); // Insert the number 100 into the LinkedList. 
+ll.insertFirst(200); // Insert the number 200 into the LinkedList. 
+ll.insertFirst(300); // Insert the number 300 into the LinkedList. 
+ll.insertLast(400); // Insert the number 400 into the LinkedList. 
 
 ll.printListData(); // Call the Method to print the data.
