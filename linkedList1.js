@@ -51,4 +51,4 @@ console.table(n2) // Displayed the results on a Table.
 n3.next = n4; // I created a pointer that will point n2 to n3
 console.table(n3) // Displayed the results on a Table.
 
-console.log(n1.next.next)
+console.log(n1.next.next) // This will display when you run this js.

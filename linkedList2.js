@@ -20,6 +20,7 @@ class LinkedList {
     }
 
     // Insert last node.
+    insertNode() {}
 
     // Insert at Index
 
