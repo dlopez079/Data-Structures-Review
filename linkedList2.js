@@ -79,10 +79,31 @@ class LinkedList {
     }
 
     // Get at Index
+    getAt(index) { // In this method, we are going to pass the index we are searching for.
+        let current = this.head;  // We are going to set the current variable to equal the head of the Linked List
+        let count = 0; // We are going to set the count variable to 0.  We will use this to increment the amount of nodes on the list. 
+
+        
+        // While there is a head on a node within the list, perform the following instructions. This will loop through the list.
+        while(current) { 
+            
+            // The count will increment for each the nodes until it equals the index number that passes through.
+            // When the count is equal to the index number, we will console.log the data of the node. 
+            if(count == index) {
+                console.log(current.data);
+            }
+            
+            // If the count does not match the index requested, we will move on to the next node and increment the count. 
+            count++; // This will increment the count.  The count will increment until it equals the index requested.  
+            current = current.next; // The current head, which we saved in the variable current will now become current.next so we can move to the next node.
+        }
+
+        return null;
+    }
 
     // Remove at Index
 
-    
+
     // Clear List
 
     // Print List Data
@@ -105,3 +126,5 @@ ll.insertLast(400); // Insert the number 400 into the LinkedList.
 ll.insertAt(500, 2); // Insert the number 500 at the 2 index.
 
 ll.printListData(); // Call the Method to print the data.
+
+ll.getAt(2); // This will loop through the list until we find the the node in index 2.
