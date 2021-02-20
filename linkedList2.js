@@ -79,7 +79,8 @@ class LinkedList {
     }
 
     // Get at Index
-    getAt(index) { // In this method, we are going to pass the index we are searching for.
+    // In this method, we are going to pass the index we are searching for.
+    getAt(index) { 
         let current = this.head;  // We are going to set the current variable to equal the head of the Linked List
         let count = 0; // We are going to set the count variable to 0.  We will use this to increment the amount of nodes on the list. 
 
@@ -102,7 +103,17 @@ class LinkedList {
     }
 
     // Remove at Index
+    // In this method, we are going to pass the index we are searching for.
+    getRemove() {
+        // Make sure that the index is within range. 
 
+        // Create a previous and next variable so we can set it later. 
+
+        // Go through the list with a while loop. 
+
+        // Set the variables on the current loop to point to previous and to next.
+        
+    }
 
     // Clear List
 
