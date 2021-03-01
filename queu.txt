@@ -1,0 +1,54 @@
+   // Check to see if Q1 elements are prime numbers.
+    // isPrime() {
+    //   let counter = 1;
+    //   let Q1size = Q1.size();
+
+    //   while(Q1.head) {
+    //     let front = Q1.dequeue(0); // Remove the front element from Q1
+        
+    //     Q2.enqueue(front); // Add to the front element to Q2
+
+    //     // Save the size of the first Queue
+    //     for (let m = 2; m < Q1size; m++) {
+    //       let value = front;
+
+    //       if (value % front == 0) { 
+    //         console.log("This is prime! ")
+    //       }
+
+
+    //     }
+
+    //   }
+
+    // };
+
+
+
+
+      for(let f=0; f*f <= length; f++) {  
+                console.log("Elements: " + current.element)
+                // Mark off all the multiples starting at mSqrt
+                // var z = m*m; z <= upperBound; z += m
+                for (let s = f*f; s <= current; s += f) {
+                    // Mark Z as composite.
+                    current = 1;   
+                    console.log(current.element);
+                }
+            current = current.next;   
+            length++;    
+        }
+
+
+         if(current !== 1) {
+
+                for(let f=0; f*f <= length; f++) {  
+                    console.log("Elements: " + current.element)
+                    // Mark off all the multiples starting at mSqrt
+                    // var z = m*m; z <= upperBound; z += 
+                    for (let s = f*f; s <= current; s += f) {
+                        // Mark Z as composite.
+                        // current = 1;   
+                        console.log(current.element); 
+                    }        
+                }
